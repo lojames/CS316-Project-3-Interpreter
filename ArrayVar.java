@@ -22,4 +22,9 @@ class ArrayVar extends Var
 		arrayName.printParseTree(indent2);
 		eList.printParseTree(indent2);
 	}
+	
+	Val Eval(HashMap<String,Val> state)
+	{
+		return null;
+	}
 }

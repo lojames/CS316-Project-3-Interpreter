@@ -16,4 +16,10 @@ class SingleTermItem extends TermItem
 	{
 		term.printParseTree(indent);
 	}
+	
+	Val Eval(HashMap<String,Val> state, Val eVal)
+	{
+		eVal = term.Eval(state);
+		return eVal;
+	}
 }

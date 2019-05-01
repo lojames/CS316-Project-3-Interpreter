@@ -14,4 +14,8 @@ class Body
 		IO.displayln(indent + indent.length() + " <body>");
 		sList.printParseTree(indent+" ");
 	}
+
+	void M(HashMap<String, Val> state) {
+		sList.M(state);		
+	}
 }

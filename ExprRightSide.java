@@ -17,4 +17,8 @@ class ExprRightSide extends RightSide
 		IO.displayln(indent1 + indent1.length() + " <expr right side>");
 		expr.printParseTree(indent1+" ");
 	}
+	
+	Val Eval(HashMap<String, Val> state) {
+		return expr.Eval(state);
+	}
 }

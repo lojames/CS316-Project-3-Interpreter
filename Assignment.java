@@ -22,4 +22,21 @@ class Assignment extends Statement
 		IO.displayln(indent2 + indent2.length() + " =");
 		rightSide.printParseTree(indent2);
 	}
+	
+	void M(HashMap<String, Val> state) {
+		String id;
+		
+		if (var.getClass() == ReturnVal.class) {
+			id = "returnVal";
+		} else if (var.getClass() == IdVar.class) {
+			id = ((IdVar)var).id.id;
+		} else {
+			//IMPLEMENT LATER
+			id = null;
+		}
+		Val rVal = rightSide.Eval(state);
+		if (rVal != null) {
+			state.put(id, rVal);
+		}
+	}
 }

@@ -15,4 +15,10 @@ class VarPrimary extends Primary
 		IO.displayln("");
 		var.printParseTree(indent+" ");
 	}
+
+	Val Eval(HashMap<String, Val> state) {
+		return var.Eval(state);
+	}
+
+	
 }

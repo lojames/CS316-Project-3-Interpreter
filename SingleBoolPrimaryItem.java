@@ -16,4 +16,10 @@ class SingleBoolPrimaryItem extends BoolPrimaryItem
 	{
 		boolPrimary.printParseTree(indent);
 	}
+	
+	Val Eval(HashMap<String,Val> state, Val bVal)
+	{
+		bVal = boolPrimary.Eval(state);
+		return bVal;
+	}
 }

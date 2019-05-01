@@ -14,4 +14,9 @@ class SingleE extends BoolPrimary
 		super.printParseTree(indent);
 		e.printParseTree(indent+" ");
 	}
+
+	Val Eval(HashMap<String, Val> state) {
+		Val eVal = e.Eval(state);
+		return eVal;
+	}
 }

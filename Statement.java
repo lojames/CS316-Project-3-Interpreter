@@ -6,4 +6,6 @@ abstract class Statement
 	{
 		IO.displayln(indent + indent.length() + " <statement>");
 	}
+
+	abstract void M(HashMap<String, Val> state);
 }

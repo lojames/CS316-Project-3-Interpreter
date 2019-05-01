@@ -22,4 +22,32 @@ abstract class CompBoolPrimary extends BoolPrimary
 		IO.displayln(indent1 + indent1.length() + getOp());
 		e2.printParseTree(indent1);
 	}
+	
+	Val Eval(HashMap<String,Val> state) {
+		Val eVal1 = e1.Eval(state);
+		Val eVal2 = e2.Eval(state);
+		
+		if (!eVal1.isNumber()){
+			IO.displayln("Error:" +getOp()+ "operator cannot be applied to " +eVal1.toString());
+			return null;
+		} else if (!eVal2.isNumber()) {
+			IO.displayln("Error:" +getOp()+ "operator cannot be applied to " +eVal2.toString());
+			return null;
+		}
+		
+		if ( getOp().equals(" <") ) {
+			return new BoolVal( ((FloatVal)eVal1).val < ((FloatVal)eVal2).val );
+		} else if ( getOp().equals(" <=") ) {
+			return new BoolVal( ((FloatVal)eVal1).val <= ((FloatVal)eVal2).val );
+		} else if ( getOp().equals(" ==") ) {
+			return new BoolVal( ((FloatVal)eVal1).val == ((FloatVal)eVal2).val );
+		} else if ( getOp().equals(" >") ) {
+			return new BoolVal( ((FloatVal)eVal1).val > ((FloatVal)eVal2).val );
+		} else if ( getOp().equals(" >=") ) {
+			return new BoolVal( ((FloatVal)eVal1).val >= ((FloatVal)eVal2).val );
+		} else {
+			return new BoolVal( ((FloatVal)eVal1).val != ((FloatVal)eVal2).val );
+		}
+		
+	}
 }

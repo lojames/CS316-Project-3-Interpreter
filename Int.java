@@ -14,4 +14,9 @@ class Int extends Primary
 		super.printParseTree(indent);
 		IO.displayln(" " + val);
 	}
+	
+	Val Eval(HashMap<String,Val> state)
+	{
+		return new IntVal(val);
+	}
 }

@@ -15,4 +15,9 @@ class Parenthesized extends Primary
 		IO.displayln("");
 		expr.printParseTree(indent+" ");
 	}
+	
+	Val Eval(HashMap<String,Val> state)
+	{
+		return expr.Eval(state);
+	}
 }

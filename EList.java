@@ -15,4 +15,8 @@ class EList
 		for ( E e : eList )
 			e.printParseTree(indent+" ");
 	}
+	
+	Val Eval(HashMap<String,Val> state) {
+		return null;
+	}
 }

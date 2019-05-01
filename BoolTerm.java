@@ -15,5 +15,22 @@ class BoolTerm
 		for ( BoolPrimaryItem bp : boolPrimaryItemList )
 			bp.printParseTree(indent+" ");
 	}
+	
+	Val Eval(HashMap<String,Val> state)
+
+	// Evaluate a sequence of boolean primaries
+
+	{
+		Val bTermVal = null;
+
+		for ( BoolPrimaryItem p : boolPrimaryItemList ) {
+			bTermVal = p.Eval(state, bTermVal);
+			if (bTermVal == null) {
+				return null;
+			}
+		}
+		return bTermVal;
+	}
+	
 }
 

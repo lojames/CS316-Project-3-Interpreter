@@ -18,4 +18,9 @@ class IdVar extends Var
 		IO.display(indent1 + indent1.length() + " <id var>");
 		id.printParseTree();
 	}
+	
+	Val Eval(HashMap<String,Val> state)
+	{
+		return id.Eval(state);
+	}
 }

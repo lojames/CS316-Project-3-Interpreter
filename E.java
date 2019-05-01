@@ -15,4 +15,16 @@ class E
 		for ( TermItem t : termItemList )
 			t.printParseTree(indent+" ");
 	}
+	
+	Val Eval(HashMap<String,Val> state)
+	// Evaluate a sequence of terms operated by + or - using left associativity
+	{
+		Val eVal = null;
+		for ( TermItem t : termItemList )
+			eVal = t.Eval(state, eVal);
+			if (eVal == null) {
+				return null;
+			}
+		return eVal;
+	}
 }

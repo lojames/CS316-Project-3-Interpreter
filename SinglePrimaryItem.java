@@ -16,4 +16,10 @@ class SinglePrimaryItem extends PrimaryItem
 	{
 		primary.printParseTree(indent);
 	}
+	
+	Val Eval(HashMap<String,Val> state, Val termVal)
+	{
+		termVal = primary.Eval(state);
+		return termVal;
+	}
 }

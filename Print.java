@@ -17,4 +17,9 @@ class Print extends Statement
 		IO.displayln(indent1 + indent1.length() + " <print>");
 		expr.printParseTree(indent1+" ");
 	}
+	
+	void M(HashMap<String,Val> state)
+	{
+		IO.displayln(expr.Eval(state).toString());
+	}
 }

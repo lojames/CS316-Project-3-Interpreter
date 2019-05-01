@@ -6,4 +6,6 @@ abstract class Primary
 	{
 		IO.display(indent + indent.length() + " <primary>");
 	}
+	
+	abstract Val Eval(HashMap<String,Val> state);
 }

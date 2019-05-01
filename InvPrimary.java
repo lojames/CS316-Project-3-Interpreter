@@ -18,4 +18,15 @@ class InvPrimary extends Primary
 		IO.displayln(indent1 + indent1.length() + " !");
 		primary.printParseTree(indent1);
 	}
+	
+	Val Eval(HashMap<String,Val> state)
+	{
+		Val pVal = primary.Eval(state);
+		if (pVal.isNumber()) {
+			IO.displayln("Error: ! operator cannot be applied to " +pVal.toString());
+			return null;
+		} else {
+			return new BoolVal(!((BoolVal)pVal).val);
+		}
+	}
 }

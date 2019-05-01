@@ -9,4 +9,8 @@ abstract class FunCall
 		IO.displayln(indent + indent.length() + " <fun call>");
 		funName.printParseTree(indent+" ");
 	}
+
+	abstract Val Eval(HashMap<String, Val> state);
+	
+	
 }

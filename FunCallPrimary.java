@@ -18,4 +18,8 @@ class FunCallPrimary extends Primary
 		IO.displayln(indent1 + indent1.length() + " <fun call primary>");
 		funCall.printParseTree(indent1);
 	}
+
+	Val Eval(HashMap<String, Val> state) {
+		return funCall.Eval(state);
+	}
 }

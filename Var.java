@@ -6,4 +6,6 @@ abstract class Var
 	{
 		IO.display(indent + indent.length() + " <var>");
 	}
+	
+	abstract Val Eval(HashMap<String,Val> state);
 }

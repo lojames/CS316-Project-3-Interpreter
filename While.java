@@ -42,7 +42,7 @@ class While extends Statement
 					return;
 			else
 			{
-				System.out.println( "Error: Boolean expression of while statement evaluated to non-Boolean value: " + exprVal.toString() );
+				IO.displayln( "Error: Boolean expression of while statement evaluated to non-Boolean value: " + exprVal.toString() );
 				return;
 			}
 		}

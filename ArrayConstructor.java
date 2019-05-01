@@ -17,4 +17,8 @@ class ArrayConstructor extends RightSide
 		IO.displayln(indent1 + indent1.length() + " <array constructor>");
 		eList.printParseTree(indent1+" ");
 	}
+	
+	Val Eval(HashMap<String, Val> state) {
+		return null;
+	}
 }

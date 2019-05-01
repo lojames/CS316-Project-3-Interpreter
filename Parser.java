@@ -64,6 +64,7 @@ import java.util.*;
 
 public abstract class Parser extends LexAnalyzer
 {
+	static HashMap<String, FunDef> funDefMap;
 	static boolean syntaxErrorFound = false;
 	static final ReturnVal returnVal_ = new ReturnVal();
 
@@ -775,6 +776,8 @@ public abstract class Parser extends LexAnalyzer
 		case 13: displayln(" id or returnVal expected"); return;
 		}
 	}
+	
+	
 
 	public static void main(String argv[])
 	{

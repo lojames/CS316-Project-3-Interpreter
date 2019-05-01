@@ -24,7 +24,7 @@ public abstract class Interpreter extends Parser
 				body.M(newState);
 			}
 			else
-				System.out.println( "Error: main function is undefined" );
+				displayln( "Error: main function is undefined" );
 		}
 
 		closeIO();

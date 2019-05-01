@@ -6,4 +6,6 @@ abstract class BoolPrimary
 	{
 		IO.displayln(indent + indent.length() + " <boolPrimary>");
 	}
+	
+	abstract Val Eval(HashMap<String,Val> state);
 }

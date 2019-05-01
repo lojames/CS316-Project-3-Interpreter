@@ -16,4 +16,10 @@ class SingleBoolTermItem extends BoolTermItem
 	{
 		boolTerm.printParseTree(indent);
 	}
+	
+	Val Eval(HashMap<String,Val> state, Val bVal)
+	{
+		bVal = boolTerm.Eval(state);
+		return bVal;
+	}
 }

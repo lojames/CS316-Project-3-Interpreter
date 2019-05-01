@@ -15,4 +15,9 @@ class SList
 		for ( Statement s : sList )
 			s.printParseTree(indent+" ");
 	}
+
+	void M(HashMap<String, Val> state) {
+		for ( Statement s: sList )
+			s.M(state);
+	}
 }
