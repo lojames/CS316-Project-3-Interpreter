@@ -20,4 +20,11 @@ class If1 extends Cond
 		expr.printParseTree(indent2);
 		statement1.printParseTree(indent2);
 	}
+
+	void M(HashMap<String, Val> state) {
+		Val eVal = expr.Eval(state);
+		if ( ((BoolVal)eVal).val == true) {
+			statement1.M(state);
+		}
+	}
 }

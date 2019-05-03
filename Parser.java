@@ -64,7 +64,7 @@ import java.util.*;
 
 public abstract class Parser extends LexAnalyzer
 {
-	static HashMap<String, FunDef> funDefMap;
+	static HashMap<String, FunDef> funDefMap = new HashMap<String, FunDef>();
 	static boolean syntaxErrorFound = false;
 	static final ReturnVal returnVal_ = new ReturnVal();
 
@@ -75,14 +75,16 @@ public abstract class Parser extends LexAnalyzer
 
 	{
 		LinkedList<FunDef> funDefList = new LinkedList<FunDef>();
-
+		String currentFunName = t;
 		FunDef funDef = funDef();
 		funDefList.add(funDef);
+		funDefMap.put(currentFunName, funDef);
 		while ( state == State.Id ) // Parse <fun def> as long as the token is <fun name>.
 		{
+			currentFunName = t;
 			funDef = funDef();
 			funDefList.add(funDef);
-			
+			funDefMap.put(currentFunName, funDef);	
 		}
 		return new FunDefList(funDefList);
 	}

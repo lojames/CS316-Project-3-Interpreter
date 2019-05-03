@@ -26,27 +26,53 @@ abstract class CompBoolPrimary extends BoolPrimary
 	Val Eval(HashMap<String,Val> state) {
 		Val eVal1 = e1.Eval(state);
 		Val eVal2 = e2.Eval(state);
-		
-		if (!eVal1.isNumber()){
-			IO.displayln("Error:" +getOp()+ "operator cannot be applied to " +eVal1.toString());
-			return null;
-		} else if (!eVal2.isNumber()) {
-			IO.displayln("Error:" +getOp()+ "operator cannot be applied to " +eVal2.toString());
-			return null;
-		}
-		
-		if ( getOp().equals(" <") ) {
-			return new BoolVal( ((FloatVal)eVal1).val < ((FloatVal)eVal2).val );
-		} else if ( getOp().equals(" <=") ) {
-			return new BoolVal( ((FloatVal)eVal1).val <= ((FloatVal)eVal2).val );
-		} else if ( getOp().equals(" ==") ) {
-			return new BoolVal( ((FloatVal)eVal1).val == ((FloatVal)eVal2).val );
-		} else if ( getOp().equals(" >") ) {
-			return new BoolVal( ((FloatVal)eVal1).val > ((FloatVal)eVal2).val );
-		} else if ( getOp().equals(" >=") ) {
-			return new BoolVal( ((FloatVal)eVal1).val >= ((FloatVal)eVal2).val );
+
+		if ( eVal1.isNumber() && eVal2.isNumber() ){
+			if ( getOp().equals(" <") ) {
+				return new BoolVal( eVal1.floatVal() < eVal2.floatVal() );
+			} else if ( getOp().equals(" <=") ) {
+				return new BoolVal( eVal1.floatVal() <= eVal2.floatVal() );
+			} else if ( getOp().equals(" ==") ) {
+				return new BoolVal( eVal1.floatVal() == eVal2.floatVal() );
+			} else if ( getOp().equals(" >") ) {
+				return new BoolVal( eVal1.floatVal() > eVal2.floatVal() );
+			} else if ( getOp().equals(" >=") ) {
+				return new BoolVal( eVal1.floatVal() >= eVal2.floatVal() );
+			} else {
+				return new BoolVal( eVal1.floatVal() != eVal2.floatVal() );
+			}
+		} else if (!eVal1.isNumber() && !eVal2.isNumber()) {
+			
+			int a, b;
+			
+			if ( ((BoolVal)eVal1).val == true) {
+				a = 1;
+			} else {
+				a = 0;
+			}
+			
+			if ( ((BoolVal)eVal2).val == true) {
+				b = 1;
+			} else {
+				b = 0;
+			}
+			
+			if ( getOp().equals(" <") ) {
+				return new BoolVal( a < b );
+			} else if ( getOp().equals(" <=") ) {
+				return new BoolVal( a <= b );
+			} else if ( getOp().equals(" ==") ) {
+				return new BoolVal( a == b );
+			} else if ( getOp().equals(" >") ) {
+				return new BoolVal( a > b );
+			} else if ( getOp().equals(" >=") ) {
+				return new BoolVal( a >= b );
+			} else {
+				return new BoolVal( a != b );
+			}
 		} else {
-			return new BoolVal( ((FloatVal)eVal1).val != ((FloatVal)eVal2).val );
+			IO.displayln("Error:" +getOp()+ " operator cannot be applied to [" +eVal1.toString()+","+eVal2.toString()+"]");
+			return null;
 		}
 		
 	}

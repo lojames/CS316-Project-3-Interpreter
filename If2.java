@@ -24,5 +24,14 @@ class If2 extends Cond
 		statement1.printParseTree(indent2);
 		IO.displayln(indent2 + indent2.length() + " else");
 		statement2.printParseTree(indent2);
+	}
+
+	void M(HashMap<String, Val> state) {
+		Val eVal = expr.Eval(state);
+		if ( ((BoolVal)eVal).val == true) {
+			statement1.M(state);
+		} else {
+			statement2.M(state);
+		}
 	}	
 }

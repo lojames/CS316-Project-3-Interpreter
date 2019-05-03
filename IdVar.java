@@ -21,6 +21,13 @@ class IdVar extends Var
 	
 	Val Eval(HashMap<String,Val> state)
 	{
-		return id.Eval(state);
+		Val idVar = state.get(id.id);
+		if ( idVar != null )
+			return idVar.cloneVal();
+		else
+		{
+			IO.displayln( "variable " +id.id+ " does not have a value" );
+			return null;
+		}
 	}
 }

@@ -12,7 +12,7 @@ class ReturnVal extends Var
 	}
 	
 	Val Eval(HashMap<String,Val> state)
-	{
+	{	
 		Val returnVal = state.get("returnVal");
 		if ( returnVal != null )
 			return returnVal.cloneVal();

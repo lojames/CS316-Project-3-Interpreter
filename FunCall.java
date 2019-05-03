@@ -12,5 +12,4 @@ abstract class FunCall
 
 	abstract Val Eval(HashMap<String, Val> state);
 	
-	
 }

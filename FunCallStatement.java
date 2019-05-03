@@ -17,4 +17,9 @@ class FunCallStatement extends Statement
 		IO.displayln(indent1 + indent1.length() + " <fun call statement>");
 		funCall.printParseTree(indent1);
 	}
+
+	@Override
+	void M(HashMap<String, Val> state) {
+		funCall.Eval(state);
+	}
 }

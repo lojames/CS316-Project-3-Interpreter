@@ -21,6 +21,7 @@ class MulPrimaryItem extends PrimaryItem
 	Val Eval(HashMap<String,Val> state, Val termVal)
 	{
 		Val primaryVal = primary.Eval(state);
+		System.out.println(primaryVal);
 
 		if ( termVal == null || primaryVal == null )
 			return null;

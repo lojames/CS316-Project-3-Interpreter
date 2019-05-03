@@ -21,7 +21,7 @@ class Id
 			return idVal.cloneVal();
 		else
 		{
-			IO.displayln("Error: variable" +id+" does not have a value" );
+			IO.displayln("Error: variable " +id+" does not have a value" );
 			return null;
 		}
 	}

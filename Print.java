@@ -20,6 +20,9 @@ class Print extends Statement
 	
 	void M(HashMap<String,Val> state)
 	{
-		IO.displayln(expr.Eval(state).toString());
+		Val exprVal = expr.Eval(state);
+		if (exprVal != null) {
+			IO.displayln(exprVal.toString());
+		}
 	}
 }

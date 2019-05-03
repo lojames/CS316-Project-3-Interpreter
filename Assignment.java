@@ -34,6 +34,7 @@ class Assignment extends Statement
 			//IMPLEMENT LATER
 			id = null;
 		}
+		
 		Val rVal = rightSide.Eval(state);
 		if (rVal != null) {
 			state.put(id, rVal);
