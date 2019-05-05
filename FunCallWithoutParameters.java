@@ -20,10 +20,10 @@ class FunCallWithoutParameters extends FunCall
 		HashMap<String,Val> newState = new HashMap<String,Val>();
 		Body tbody = tFunDef.body; 
 		tbody.M(newState);
-		if (newState.get("returnVal") != null) {
+		if (newState.containsKey("returnVal")) {
+			System.out.println(newState.get("returnVal"));
 			return newState.get("returnVal");
 		} else {
-			IO.displayln("returnVal does not have a value");
 			return null;
 		}
 	}

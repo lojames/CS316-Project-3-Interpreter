@@ -42,9 +42,9 @@ class FunCallWithParameters extends FunCall
 			Body tbody = tFunDef.body;
 			tbody.M(newState);
 			if (newState.get("returnVal") != null) {
+				System.out.println(newState.get("returnVal"));
 				return newState.get("returnVal");
 			} else {
-				IO.displayln("returnVal does not have a value");
 				return null;
 			}
 		} else {

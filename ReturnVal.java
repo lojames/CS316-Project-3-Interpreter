@@ -18,7 +18,7 @@ class ReturnVal extends Var
 			return returnVal.cloneVal();
 		else
 		{
-			IO.displayln( "Error: returnVal does not have a value" );
+			IO.displayln( "returnVal does not have a value" );
 			return null;
 		}
 	}
